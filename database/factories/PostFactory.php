@@ -19,10 +19,17 @@ class PostFactory extends Factory
      *
      * @return array
      */
+    //$factory->define(Post::class, function(faker $faker) {
+    //$title = $faker->sentence;
+    //});
+    
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->title,
+            'slug'  => Str::slug($this->faker->title),
+            'body'  => $this->faker->text
         ];
     }
 }
+
